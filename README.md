@@ -40,11 +40,12 @@ A nethack game using C++ for midterm project:
     - use Enter Key to use your prop
   
 - rules
+    - There are 5 levels and the yendor is in the fifth level.
     - You will win the game if you get the yendor or lose the game when you HP down to 0.
     - You can hurt a monstre only if you predict the monstre's movement and lanch an attack.
     - Monstre can only move in the room.
     - The monstre's attck is a suicide attack. You will be hurt if the monstre hit you.
     - Some doors couldn't be open.
 
-
+![](https://raw.githubusercontent.com/GMHDBJD/nethack/master/screenshots/nethack.png)
 
