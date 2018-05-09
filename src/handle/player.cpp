@@ -15,7 +15,7 @@ int Player::GetGold() const
 
 Screen &operator<<(Screen &screen, const Player &play)
 {
-    mvprintw(26, 10, "You     Hp: %d(%d)", play._hp, play._max_hp);
+    mvprintw(26, 10, "You:     Hp: %d(%d)", play._hp, play._max_hp);
     printw("    Attack: %d", play._attack);
     printw("    Defence: %d", play._defence);
     printw("    Gold: %d", play._gold);
