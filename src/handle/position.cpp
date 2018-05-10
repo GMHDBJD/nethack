@@ -1,6 +1,6 @@
 #include "position.h"
 
-const int Position::_grid_position[5][2] = {{6, 3}, {55, 4}, {30, 9}, {4, 15}, {55, 14}};
+const int Position::_grid_position[5][2] = {{6, 4}, {55, 5}, {30, 10}, {4, 16}, {55, 15}};
 
 Position::Position() : _x(-1), _y(-1) {}
 

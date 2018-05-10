@@ -34,9 +34,9 @@ Screen &operator<<(Screen &screen, const LevelImpl &level_impl)
     }
     int defence = int(1.5 * level_impl._index);
     int num = int(level_impl._monstre_vector.size());
-    mvprintw(24, 10, "Level: %d", level_impl._index+1);
-    mvprintw(25, 50, "Num:%d(%d)\n", num, level_impl._monstre_num);
-    mvprintw(25, 10, "Monstre:  Hp: %d  Attack: %d  Defence %d ", int(2.5 * level_impl._index + 2), int(1.5 * level_impl._index) + 5, defence);
+    mvprintw(25, 10, "Level: %d", level_impl._index + 1);
+    mvprintw(26, 50, "Num:%d(%d)\n", num, level_impl._monstre_num);
+    mvprintw(26, 10, "Monstre:  Hp: %d  Attack: %d  Defence %d ", int(2.5 * level_impl._index + 2), int(1.5 * level_impl._index) + 5, defence);
     return screen;
 }
 
@@ -156,11 +156,13 @@ void LevelImpl::AttackMonstre(const Position &position, Player *player)
         {
             if (i->GetHp() > player->GetAttack())
             {
+                mvprintw(0, 0, "You hurt the monstre.\n");
                 *i -= *player;
                 ++i;
             }
             else
             {
+                mvprintw(0, 0, "You kill the monstre.\n");
                 i = _monstre_vector.erase(i);
                 player->SetGold(player->GetGold() + i->GetMaxHp());
                 player->SetExperience(player->GetExperience() + i->GetAttack());
@@ -178,6 +180,7 @@ void LevelImpl::AttackPlayer(Player *player_ptr)
     {
         if (i->GetPosition() == player_ptr->GetPosition())
         {
+            mvprintw(0, 0, "You are hurt by monstre.\n");
             *player_ptr -= *i;
             i = _monstre_vector.erase(i);
         }
@@ -193,6 +196,7 @@ void LevelImpl::Pick(Player *player)
     {
         if (prop->GetPosition() == player->GetPosition())
         {
+            mvprintw(0, 0, "You pick up the prop.\n");
             player->PickProp(*prop);
             prop = _prop_vector.erase(prop);
         }

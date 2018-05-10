@@ -22,8 +22,10 @@ void GameImpl::GameLoop()
     level_player_position = _levels[_current_level].GetLevelPlayerPosition();
     _player.SetPosition(Position(level_player_position.GetX(), level_player_position.GetY()));
     screen << _levels[_current_level] << _player;
+    mvprintw(0, 0, "Enjoy the game('t' to quit)");
     while (_player.GetHp() > 0 && (ch = getch()) != 't')
     {
+        mvprintw(0, 0, "\n");
         temp_level = _current_level;
         if (HandleInput(ch))
         {
