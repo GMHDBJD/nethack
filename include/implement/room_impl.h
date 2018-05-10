@@ -12,7 +12,7 @@ public:
   Position GetDoorPosition(const int &index) const;
   void SaveToMap(std::pair<char, int>[Position::_k_max_height][Position::_k_max_width]) const;
   void Show(std::pair<char, int>[Position::_k_max_height][Position::_k_max_width]) const;
-  int GetHeight()const;
+  int GetHeight() const;
   int GetWidth() const;
   Position GetPosition() const;
 

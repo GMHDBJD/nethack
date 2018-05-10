@@ -7,14 +7,15 @@ class ScreenImpl;
 
 class Screen
 {
-  public:
-    Screen();
-    Screen(const Screen&);
-    Screen& operator=(const Screen&);
-    int CheckPosition(const Position&)const;
-    ~Screen();
-  private:
-    std::unique_ptr<ScreenImpl> screen_impl;
+public:
+  Screen();
+  Screen(const Screen &);
+  Screen &operator=(const Screen &);
+  int CheckPosition(const Position &) const;
+  ~Screen();
+
+private:
+  std::unique_ptr<ScreenImpl> screen_impl;
 };
 
 #endif

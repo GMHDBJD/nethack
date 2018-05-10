@@ -9,10 +9,10 @@ class GameImpl;
 class Game
 {
 public:
-  Game();
+  Game(const int &);
   Game(const Game &);
   Game &operator=(const Game &);
-  void gameLoop();
+  void Loop();
   bool HandleInput(const char &input);
   ~Game();
 

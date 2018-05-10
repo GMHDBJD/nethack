@@ -3,7 +3,7 @@ A nethack game using C++ for midterm project:
 
 1 - Environment:
    - run on ubuntu.
-   - make sure your terminal is at least 28 lines height and 90 characters width.
+   - make sure your terminal is at least 30 lines height and 90 characters width.
    - third-party libraries: ncursus, menu.
 
 2 - Compile :
@@ -36,15 +36,15 @@ A nethack game using C++ for midterm project:
     - use y to get the yendor
     - use , to pick up the prop
     - use m to open or close you bag
-    - use Up-Arrow Key and Down-Arrow key to select the prop when you open your bag
-    - use Enter Key to use your prop
+    - use Up-Arrow Key and Down-Arrow key to select the prop when you open your bag or select the game mode
+    - use Enter Key to use your prop or choose the game mode
   
 - rules
-    - There are 5 levels and the yendor is in the fifth level.
-    - You will win the game if you get the yendor or lose the game when you HP down to 0.
+    - There are 3 modes which have a different number of levels.The maps are all randomly generated.
+    - You will win the game if you get the yendor or lose the game when your HP down to 0.
     - You can hurt a monstre only if you predict the monstre's movement and lanch an attack.
     - Monstre can only move in the room.
-    - The monstre's attck is a suicide attack. You will be hurt if the monstre hit you.
+    - The monstre's attack is a suicide attack. You will be hurt if the monstre hit you.
     - Some doors can't be open.
 
 ![](https://raw.githubusercontent.com/GMHDBJD/nethack/master/screenshots/nethack.png)

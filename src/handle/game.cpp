@@ -1,9 +1,10 @@
 #include "game.h"
 #include "game_impl.h"
 
-Game::Game() : game_impl(new GameImpl()) {}
+Game::Game(const int &choice) : game_impl(new GameImpl(choice)) {}
 
 Game::Game(const Game &rhs) : game_impl(new GameImpl(*rhs.game_impl)) {}
+
 Game &Game::operator=(const Game &rhs)
 {
     *game_impl = *rhs.game_impl;
@@ -12,9 +13,9 @@ Game &Game::operator=(const Game &rhs)
 
 Game::~Game() = default;
 
-void Game::gameLoop()
+void Game::Loop()
 {
-    game_impl->GameLoop();
+    game_impl->Loop();
 }
 
 bool Game::HandleInput(const char &input)

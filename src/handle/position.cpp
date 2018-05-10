@@ -193,7 +193,7 @@ std::vector<Position> Position::GetDirectorPosition() const
     return temp_vector;
 }
 
-int Position::Distance(const  Position &rhs)const
+int Position::Distance(const Position &rhs) const
 {
-    return (_x - rhs._x) * (_x - rhs._x) + (_y - rhs._y)*(_y - rhs._y);
+    return (_x - rhs._x) * (_x - rhs._x) + (_y - rhs._y) * (_y - rhs._y);
 }

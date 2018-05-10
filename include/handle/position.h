@@ -9,8 +9,8 @@ class Screen;
 class Position
 {
 public:
-  static const int _k_max_height=33;
-  static const int _k_max_width=100;
+  static const int _k_max_height = 33;
+  static const int _k_max_width = 100;
   typedef int pos;
   Position();
   Position(const Position &);
@@ -23,12 +23,12 @@ public:
   pos GetY() const;
 
   std::pair<pos, pos> GetXY() const;
-  Position& SetX(const pos &);
-  Position& SetY(const pos &);
-  Position& SetXY(const pos &x, const pos &y);
-  Position& AddX(const pos &);
-  Position& AddY(const pos &);
-  Position& AddXY(const pos &, const pos &);
+  Position &SetX(const pos &);
+  Position &SetY(const pos &);
+  Position &SetXY(const pos &x, const pos &y);
+  Position &AddX(const pos &);
+  Position &AddY(const pos &);
+  Position &AddXY(const pos &, const pos &);
   Position GetLeftPosition() const;
   Position GetRightPosition() const;
   Position GetUpPosition() const;
@@ -37,7 +37,7 @@ public:
   Position GetRightUpPosition() const;
   Position GetLeftDownPosition() const;
   Position GetRightDownPosition() const;
-  pos Distance(const Position &)const;
+  pos Distance(const Position &) const;
   std::vector<Position> GetNearPosition() const;
   std::vector<Position> GetDirectorPosition() const;
 

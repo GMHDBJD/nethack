@@ -6,16 +6,19 @@
 
 extern Screen screen;
 
-GameImpl::GameImpl()
+GameImpl::GameImpl(const int& choice):_current_level(0)
 {
-    for (int i = 0; i < 5; ++i)
+    _total_level = (choice+1) * 5;
+    for (int i = 0; i < _total_level; ++i)
     {
         _levels[i].SetIndex(i);
+        _levels[i].SetTotalLevel(_total_level);
     }
 }
 
-void GameImpl::GameLoop()
+void GameImpl::Loop()
 {
+    clear();
     char ch;
     Position level_player_position;
     int temp_level = _current_level;
@@ -49,10 +52,6 @@ void GameImpl::GameLoop()
         _player.SetPosition(Position(level_player_position.GetX(), level_player_position.GetY()));
         screen << _levels[_current_level] << _player;
     }
-    clear();
-    mvprintw(10, 30, "See You!");
-    refresh();
-    getch();
     clear();
 }
 
@@ -99,7 +98,7 @@ bool GameImpl::HandleInput(const char &input)
     }
     else if (input == 'y')
     {
-        if (_levels[_current_level].GetWinPosition() == _player.GetPosition() && _current_level == 4)
+        if (_levels[_current_level].GetWinPosition() == _player.GetPosition() && _current_level == _total_level - 1)
         {
             return true;
         }
@@ -107,3 +106,4 @@ bool GameImpl::HandleInput(const char &input)
     _levels[_current_level].AttackPlayer(&_player);
     return false;
 }
+

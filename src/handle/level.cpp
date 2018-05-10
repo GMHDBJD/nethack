@@ -86,3 +86,8 @@ void Level::Pick(Player *_player)
 {
     level_impl->Pick(_player);
 }
+
+void Level::SetTotalLevel(const int &total_level)
+{
+    level_impl->SetTotalLevel(total_level);
+}

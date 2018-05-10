@@ -1,6 +1,5 @@
-#include "game.h"
+#include "main_menu.h"
 #include "screen.h"
-#include <ncurses.h>
 #include <random>
 
 Screen screen;
@@ -8,7 +7,6 @@ Screen screen;
 int main()
 {
     srand(time(0));
-    Game game;
-    game.gameLoop();
+    MainMenu();
     return 0;
 }

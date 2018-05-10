@@ -2,7 +2,7 @@
 #include "ncurses.h"
 #include <algorithm>
 
-Player::Player() : Creature(20, 5, 2) {}
+Player::Player() : Creature(20, 5, 2), _experience(0), _gold(0) {}
 
 int Player::GetExperience() const
 {
@@ -15,7 +15,7 @@ int Player::GetGold() const
 
 Screen &operator<<(Screen &screen, const Player &play)
 {
-    mvprintw(27, 10, "You:     Hp: %d(%d)", play._hp, play._max_hp);
+    mvprintw(28, 10, "You:     Hp: %d(%d)", play._hp, play._max_hp);
     printw("    Attack: %d", play._attack);
     printw("    Defence: %d", play._defence);
     printw("    Gold: %d", play._gold);

@@ -6,12 +6,13 @@
 class GameImpl
 {
 public:
-  GameImpl();
-  void GameLoop();
+  GameImpl(const int &);
+  void Loop();
   bool HandleInput(const char &input);
 
 private:
-  Level _levels[5];
+  Level _levels[20];
+  int _total_level;
   int _current_level;
   Player _player;
 };

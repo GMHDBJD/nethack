@@ -10,7 +10,7 @@ class RoomImpl;
 class Room
 {
 public:
-  Room(const int &index=0);
+  Room(const int &index = 0);
   Room(const Room &);
   Room &operator=(const Room &);
   Position GetDoorPosition(const int &index) const;

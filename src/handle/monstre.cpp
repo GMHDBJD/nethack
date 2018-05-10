@@ -20,5 +20,4 @@ Position Monstre::GetNextPosition(const Position &destinate_position) const
     return _position;
 }
 
-Monstre::Monstre(int max_hp, int attack, int defence) : Creature( max_hp,  attack,  defence) {}
-
+Monstre::Monstre(int max_hp, int attack, int defence) : Creature(max_hp, attack, defence) {}

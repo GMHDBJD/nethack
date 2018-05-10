@@ -2,8 +2,8 @@
 #define PLAYER_IMPL_H_
 
 #include "creature.h"
-#include "screen.h"
 #include "prop.h"
+#include "screen.h"
 #include <menu.h>
 
 class Player : public Creature
@@ -18,8 +18,8 @@ public:
   int GetExperience() const;
   Position GetNextPosition(const char &input) const;
   int GetGold() const;
-  Player &SetGold(const int& );
-  Player &SetExperience( const int&);
+  Player &SetGold(const int &);
+  Player &SetExperience(const int &);
   friend Screen &operator<<(Screen &, const Player &);
   void PickProp(const Prop &);
   void Menu();

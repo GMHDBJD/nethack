@@ -10,11 +10,11 @@ Screen &operator<<(Screen &screen, const LevelImpl &level_impl)
     screen << level_impl._map;
     if (mvinch(level_impl._downstair.GetY(), level_impl._downstair.GetX()) == '.' && level_impl._index != 0)
         mvaddch(level_impl._downstair.GetY(), level_impl._downstair.GetX(), '<');
-    if (mvinch(level_impl._upstair.GetY(), level_impl._upstair.GetX()) == '.' && level_impl._index != 4)
+    if (mvinch(level_impl._upstair.GetY(), level_impl._upstair.GetX()) == '.' && level_impl._index != level_impl._total_level-1)
     {
         mvaddch(level_impl._upstair.GetY(), level_impl._upstair.GetX(), '>');
     }
-    if (level_impl._index == 4 && mvinch(level_impl._win.GetY(), level_impl._win.GetX()) == '.')
+    if (level_impl._index == level_impl._total_level-1 && mvinch(level_impl._win.GetY(), level_impl._win.GetX()) == '.')
     {
         mvaddch(level_impl._win.GetY(), level_impl._win.GetX(), 'Y');
     }
@@ -34,9 +34,8 @@ Screen &operator<<(Screen &screen, const LevelImpl &level_impl)
     }
     int defence = int(1.5 * level_impl._index);
     int num = int(level_impl._monstre_vector.size());
-    mvprintw(25, 10, "Level: %d", level_impl._index + 1);
-    mvprintw(26, 50, "Num:%d(%d)\n", num, level_impl._monstre_num);
-    mvprintw(26, 10, "Monstre:  Hp: %d  Attack: %d  Defence %d ", int(2.5 * level_impl._index + 2), int(1.5 * level_impl._index) + 5, defence);
+    mvprintw(26, 10, "Level: %d(%d)", level_impl._index + 1,level_impl._total_level);
+    mvprintw(27, 10, "Monstre:  Hp: %d  Attack: %d  Defence %d Num:%d(%d)\n", int(2.5 * level_impl._index + 2), int(1.5 * level_impl._index) + 5, defence,num, level_impl._monstre_num);
     return screen;
 }
 
@@ -63,10 +62,10 @@ LevelImpl::LevelImpl()
     }
 }
 
-void LevelImpl::SetIndex(const int &__index)
+void LevelImpl::SetIndex(const int &index)
 {
-    _index = __index;
-    _monstre_num = __index * 2 + 5;
+    _index = index;
+    _monstre_num = index * 2 + 5;
     for (int i = 0; i < _monstre_num; ++i)
     {
         Monstre new_monster(int(2.5 * _index) + 2, int(1.5 * _index) + 5, int(1.5 * _index));
@@ -156,7 +155,7 @@ void LevelImpl::AttackMonstre(const Position &position, Player *player)
         {
             if (i->GetHp() > player->GetAttack())
             {
-                mvprintw(0, 0, "You hurt the monstre.\n");
+                mvprintw(0, 0, "You attack the monstre.\n");
                 *i -= *player;
                 ++i;
             }
@@ -180,7 +179,7 @@ void LevelImpl::AttackPlayer(Player *player_ptr)
     {
         if (i->GetPosition() == player_ptr->GetPosition())
         {
-            mvprintw(0, 0, "You are hurt by monstre.\n");
+            mvprintw(0, 0, "You are attacked by monstre.\n");
             *player_ptr -= *i;
             i = _monstre_vector.erase(i);
         }
@@ -205,4 +204,9 @@ void LevelImpl::Pick(Player *player)
             ++prop;
         }
     }
+}
+
+void LevelImpl::SetTotalLevel(const int &total_level)
+{
+    _total_level = total_level;
 }

@@ -15,6 +15,7 @@ public:
   Level(const Level &);
   Level &operator=(const Level &);
   friend Screen &operator<<(Screen &, const Level &);
+  void SetTotalLevel(const int &);
   Position GetInitPosition() const;
   Position GetRandomPosition() const;
   void SetIndex(const int &);

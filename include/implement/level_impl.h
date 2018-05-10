@@ -17,6 +17,7 @@ public:
   Map GetMap() const;
   bool UpdateMap(const Position &position);
   void SetIndex(const int &index);
+  void SetTotalLevel(const int &);
   Position GetLevelPlayerPosition() const;
   void SetLevelPlayerPosition(const Position &position);
   Position GetUpstairPosition() const;
@@ -30,6 +31,7 @@ public:
 
 private:
   Map _map;
+  int _total_level;
   Position _upstair;
   Position _downstair;
   Position _player_position;
