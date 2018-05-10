@@ -1,5 +1,5 @@
 #include "level_impl.h"
-#include "ncurses.h"
+#include <ncurses.h>
 #include <algorithm>
 #include <cstring>
 

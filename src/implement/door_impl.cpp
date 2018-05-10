@@ -1,5 +1,4 @@
 #include "door_impl.h"
-#include "ncurses.h"
 
 void DoorImpl::SetPosition(const int &x, const int &y)
 {

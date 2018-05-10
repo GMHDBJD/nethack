@@ -1,5 +1,5 @@
 #include "player.h"
-#include "ncurses.h"
+#include <ncurses.h>
 #include <algorithm>
 
 Player::Player() : Creature(20, 5, 2), _experience(0), _gold(0) {}

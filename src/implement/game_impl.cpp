@@ -1,5 +1,5 @@
 #include "game_impl.h"
-#include "ncurses.h"
+#include <ncurses.h>
 #include "position.h"
 #include <cstring>
 #include <menu.h>

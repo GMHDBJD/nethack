@@ -1,5 +1,5 @@
 #include "prop_impl.h"
-#include "ncurses.h"
+#include <ncurses.h>
 #include <cstdio>
 #include <cstring>
 
