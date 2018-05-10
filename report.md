@@ -10,7 +10,7 @@
    - 代码架构
      -  ```mermaid
         graph LR;
-        subgraph one
+        subgraph one 
         main--调用---MainMenu;
         MainMenu((MainMenu))--实例化---Game;
         Game---Level;
