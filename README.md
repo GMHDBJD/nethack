@@ -46,6 +46,6 @@ A nethack game using C++ for midterm project:
     - Monstre can only move in the room.
     - The monstre's attack is a suicide attack. You will be hurt if the monstre hit you.
     - Some doors can't be open.
-
+#
 ![](https://raw.githubusercontent.com/GMHDBJD/nethack/master/screenshots/nethack.png)
 

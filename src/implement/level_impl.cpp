@@ -34,8 +34,8 @@ Screen &operator<<(Screen &screen, const LevelImpl &level_impl)
     }
     int defence = int(1.5 * level_impl._index);
     int num = int(level_impl._monstre_vector.size());
-    mvprintw(26, 10, "Level: %d(%d)", level_impl._index + 1,level_impl._total_level);
-    mvprintw(27, 10, "Monstre:  Hp: %d  Attack: %d  Defence %d Num:%d(%d)\n", int(2.5 * level_impl._index + 2), int(1.5 * level_impl._index) + 5, defence,num, level_impl._monstre_num);
+    mvprintw(26, 2, "Level: %d(%d)", level_impl._index + 1,level_impl._total_level);
+    mvprintw(27, 2, "Monstre:  Hp: %d  Attack: %d  Defence %d Num:%d(%d)\n", int(2.5 * level_impl._index + 2), int(1.5 * level_impl._index) + 5, defence,num, level_impl._monstre_num);
     return screen;
 }
 
