@@ -23,9 +23,9 @@ A nethack game using C++ for midterm project:
   - < represent downstair
   - W represent yendor(your target)
   - A B S are all props. 
-     - A represent armor which can increase your defence you after you wear it.
+     - A represent armor which can increase your defence after you wear it.
      - B represent blood which can increase your hp after you drink it.
-     - S represent spinach which can increase youru after you eat it
+     - S represent spinach which can increase your attack after you eat it
 
 - controls
     - use 12346789 to move in eight directions
@@ -34,9 +34,9 @@ A nethack game using C++ for midterm project:
     - use u when you on the upstair to go to next level
     - use j when you on the downstair to go to prev level
     - use y to get the yendor
-    - use , to pick the prop
+    - use , to pick up the prop
     - use m to open or close you bag
-    - use Up-Arrow Key and Down-Arrow key to select the prop when you open your beg
+    - use Up-Arrow Key and Down-Arrow key to select the prop when you open your bag
     - use Enter Key to use your prop
   
 - rules
