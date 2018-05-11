@@ -32,7 +32,7 @@ Screen &operator<<(Screen &screen, const LevelImpl &level_impl)
         if (mvinch(y, x) != ' ' && mvinch(y, x) != '@')
             screen << i;
     }
-    int defence = int(1.5 * level_impl._index);
+    int defence = int(3 * level_impl._index);
     int num = int(level_impl._monstre_vector.size());
     if (level_impl._total_level != 1000)
         mvprintw(26, 2, "Level: %d(%d)", level_impl._index + 1, level_impl._total_level);
