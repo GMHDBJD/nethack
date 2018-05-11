@@ -16,7 +16,7 @@ GameImpl::GameImpl(const int& choice):_current_level(0)
     }
 }
 
-void GameImpl::Loop()
+void GameImpl::MainGame()
 {
     clear();
     char ch;
@@ -30,7 +30,7 @@ void GameImpl::Loop()
     {
         mvprintw(0, 0, "\n");
         temp_level = _current_level;
-        if (HandleInput(ch))
+        if (SwitchChoice(ch))
         {
             clear();
             mvprintw(10, 30, "You Win!");
@@ -55,7 +55,7 @@ void GameImpl::Loop()
     clear();
 }
 
-bool GameImpl::HandleInput(const char &input)
+bool GameImpl::SwitchChoice(const char &input)
 {
     extern Screen screen;
     _levels[_current_level].MoveMonstres(_player.GetPosition());

@@ -13,12 +13,12 @@ Game &Game::operator=(const Game &rhs)
 
 Game::~Game() = default;
 
-void Game::Loop()
+void Game::MainGame()
 {
-    game_impl->Loop();
+    game_impl->MainGame();
 }
 
-bool Game::HandleInput(const char &input)
+bool Game::SwitchChoice(const char &input)
 {
-    return game_impl->HandleInput(input);
+    return game_impl->SwitchChoice(input);
 }

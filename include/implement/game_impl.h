@@ -7,8 +7,8 @@ class GameImpl
 {
 public:
   GameImpl(const int &);
-  void Loop();
-  bool HandleInput(const char &input);
+  void MainGame();
+  bool SwitchChoice(const char &input);
 
 private:
   Level _levels[20];

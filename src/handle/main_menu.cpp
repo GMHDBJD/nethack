@@ -35,7 +35,7 @@ void MainMenu()
                 else
                 {
                     Game game(item_index(current_item(menu)));
-                    game.Loop();
+                    game.MainGame();
                 }
                 break;
             }

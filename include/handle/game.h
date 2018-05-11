@@ -12,8 +12,8 @@ public:
   Game(const int &);
   Game(const Game &);
   Game &operator=(const Game &);
-  void Loop();
-  bool HandleInput(const char &input);
+  void MainGame();
+  bool SwitchChoice(const char &input);
   ~Game();
 
 private:
