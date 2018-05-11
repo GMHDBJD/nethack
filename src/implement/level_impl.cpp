@@ -38,7 +38,7 @@ Screen &operator<<(Screen &screen, const LevelImpl &level_impl)
         mvprintw(26, 2, "Level: %d(%d)", level_impl._index + 1, level_impl._total_level);
     else
         mvprintw(26, 2, "Level: %d(endless)", level_impl._index + 1);
-    mvprintw(27, 2, "Monstre:  Hp: %d  Attack: %d  Defence %d Num:%d(%d)\n", int(2.5 * level_impl._index + 2), int(1.5 * level_impl._index) + 5, defence, num, level_impl._monstre_num);
+    mvprintw(27, 2, "Monstre:  Hp: %d  Attack: %d  Defence %d Num:%d(%d)\n", int(3 * level_impl._index + 2), int(2 * level_impl._index) + 5, defence, num, level_impl._monstre_num);
     return screen;
 }
 
@@ -71,7 +71,7 @@ void LevelImpl::SetIndex(const int &index)
     _monstre_num = index * 2 + 5;
     for (int i = 0; i < _monstre_num; ++i)
     {
-        Monstre new_monster(int(2.5 * _index) + 2, int(1.5 * _index) + 5, int(1.5 * _index));
+        Monstre new_monster(int(3 * _index) + 2, int(2 * _index) + 5, int(2 * _index));
         new_monster.SetPosition(_map.GetRandomPosition());
         _monstre_vector.push_back(new_monster);
     }
