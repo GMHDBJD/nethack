@@ -19,7 +19,7 @@ Screen &operator<<(Screen &screen, const Player &play)
     printw("    Attack: %d", play._attack);
     printw("    Defence: %d", play._defence);
     printw("    Gold: %d", play._gold);
-    printw("    Exp: %d", play._experience);
+    printw("    Exp: %d\n", play._experience);
     mvaddch(play.GetPosition().GetY(), play.GetPosition().GetX(), '@');
     return screen;
 }

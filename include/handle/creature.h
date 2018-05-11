@@ -18,6 +18,7 @@ public:
   int GetMaxHp() const;
   int GetAttack() const;
   int GetHp() const;
+  int GetDefence() const;
   void SetMaxHp(const int &);
   void SetAttack(const int &);
   void SetHp(const int &);

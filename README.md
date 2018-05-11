@@ -45,6 +45,7 @@ A nethack game using C++ for midterm project:
     - You can hurt a monstre only if you predict the monstre's movement and lanch an attack.
     - Monstre can only move in four directions and only move in the room.
     - The monstre's attack is a suicide attack. You will be hurt if the monstre hit you.
+    - You will get gold and experience when you kill the monstre and the gold and experience will automatic convert into attack and defence.
     - Some doors can't be open.
 #
 ![](https://raw.githubusercontent.com/GMHDBJD/nethack/master/screenshots/nethack.png)

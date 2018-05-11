@@ -17,6 +17,11 @@ int Creature::GetAttack() const
     return _attack;
 }
 
+int Creature::GetDefence() const
+{
+    return _defence;
+}
+
 int Creature::GetHp() const
 {
     return _hp;

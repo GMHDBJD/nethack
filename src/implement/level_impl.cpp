@@ -32,12 +32,12 @@ Screen &operator<<(Screen &screen, const LevelImpl &level_impl)
         if (mvinch(y, x) != ' ' && mvinch(y, x) != '@')
             screen << i;
     }
-    int defence = int(3 * level_impl._index);
+    int defence = int(2.5 * level_impl._index);
     int num = int(level_impl._monstre_vector.size());
     if (level_impl._total_level != 1000)
-        mvprintw(26, 2, "Level: %d(%d)", level_impl._index + 1, level_impl._total_level);
+        mvprintw(26, 2, "Level: %d(%d)\n", level_impl._index + 1, level_impl._total_level);
     else
-        mvprintw(26, 2, "Level: %d(endless)", level_impl._index + 1);
+        mvprintw(26, 2, "Level: %d(endless)\n", level_impl._index + 1);
     mvprintw(27, 2, "Monstre:  Hp: %d  Attack: %d  Defence %d Num:%d(%d)\n", int(3 * level_impl._index + 2), int(2 * level_impl._index) + 5, defence, num, level_impl._monstre_num);
     return screen;
 }
@@ -71,7 +71,7 @@ void LevelImpl::SetIndex(const int &index)
     _monstre_num = index * 2 + 5;
     for (int i = 0; i < _monstre_num; ++i)
     {
-        Monstre new_monster(int(3 * _index) + 2, int(2 * _index) + 5, int(3 * _index));
+        Monstre new_monster(int(3 * _index) + 2, int(2 * _index) + 5, int(2.5 * _index));
         new_monster.SetPosition(_map.GetRandomPosition());
         _monstre_vector.push_back(new_monster);
     }
@@ -166,8 +166,18 @@ void LevelImpl::AttackMonstre(const Position &position, Player *player)
             {
                 mvprintw(0, 0, "You kill the monstre.\n");
                 i = _monstre_vector.erase(i);
-                player->SetGold(player->GetGold() + i->GetMaxHp());
-                player->SetExperience(player->GetExperience() + i->GetAttack());
+                player->SetGold(player->GetGold() + rand() % 3 + 5);
+                if (player->GetGold() > 100)
+                {
+                    player->SetGold(player->GetGold() % 100);
+                    player->SetAttack(player->GetAttack() + 1);
+                }
+                player->SetExperience(player->GetExperience() + rand()%3+3);
+                if (player->GetExperience() > 100)
+                {
+                    player->SetExperience(player->GetExperience() % 100);
+                    player->SetDefence(player->GetDefence() + 1);
+                }
             }
         }
         else
