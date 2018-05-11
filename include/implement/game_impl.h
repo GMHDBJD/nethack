@@ -9,9 +9,10 @@ public:
   GameImpl(const int &);
   void MainGame();
   bool SwitchChoice(const char &input);
+  ~GameImpl();
 
 private:
-  Level _levels[20];
+  Level *_levels;
   int _total_level;
   int _current_level;
   Player _player;

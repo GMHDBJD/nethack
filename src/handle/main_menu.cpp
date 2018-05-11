@@ -3,13 +3,13 @@
 
 void MainMenu()
 {
-    char choices[4][30] = {"Easy Mode", "Normal Mode", "Hard Mode", "Exit"};
+    char choices[5][30] = {"Easy Mode", "Normal Mode", "Hard Mode", "Endless Mode", "Exit"};
     int c;
-    ITEM *mode_arr[5];
+    ITEM *mode_arr[6];
     MENU *menu;
-    for (int i = 0; i < 4; ++i)
+    for (int i = 0; i < 5; ++i)
         mode_arr[i] = new_item(choices[i], "");
-    mode_arr[4] = nullptr;
+    mode_arr[5] = nullptr;
     menu = new_menu(mode_arr);
     bool quit = false;
     while (!quit)
@@ -30,10 +30,16 @@ void MainMenu()
                 break;
             case 10:
                 enter = true;
-                if (item_index(current_item(menu)) == 3)
+                if (item_index(current_item(menu)) == 4)
                     quit = true;
                 else
                 {
+                    if (item_index(current_item(menu)) == 3)
+                    {
+                        clear();
+                        mvprintw(0, 0, "Please wait a moment...");
+                        refresh();
+                    }
                     Game game(item_index(current_item(menu)));
                     game.MainGame();
                 }
@@ -44,6 +50,6 @@ void MainMenu()
         clear();
     }
     free_menu(menu);
-    for (int i = 0; i < 4; ++i)
+    for (int i = 0; i < 5; ++i)
         free_item(mode_arr[i]);
 }

@@ -1,14 +1,23 @@
 #include "game_impl.h"
-#include <ncurses.h>
 #include "position.h"
 #include <cstring>
 #include <menu.h>
+#include <ncurses.h>
 
 extern Screen screen;
 
-GameImpl::GameImpl(const int& choice):_current_level(0)
+GameImpl::GameImpl(const int &choice) : _current_level(0)
 {
-    _total_level = (choice+1) * 5;
+    if (choice == 3)
+    {
+        _total_level = 1000;
+        _levels = new Level[_total_level];
+    }
+    else
+    {
+        _total_level = (choice + 1) * 5;
+        _levels = new Level[_total_level];
+    }
     for (int i = 0; i < _total_level; ++i)
     {
         _levels[i].SetIndex(i);
@@ -53,6 +62,11 @@ void GameImpl::MainGame()
         screen << _levels[_current_level] << _player;
     }
     clear();
+}
+
+GameImpl::~GameImpl()
+{
+    delete[] _levels;
 }
 
 bool GameImpl::SwitchChoice(const char &input)
@@ -106,4 +120,3 @@ bool GameImpl::SwitchChoice(const char &input)
     _levels[_current_level].AttackPlayer(&_player);
     return false;
 }
-

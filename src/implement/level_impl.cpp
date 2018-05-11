@@ -1,7 +1,7 @@
 #include "level_impl.h"
-#include <ncurses.h>
 #include <algorithm>
 #include <cstring>
+#include <ncurses.h>
 
 extern Screen screen;
 
@@ -10,11 +10,11 @@ Screen &operator<<(Screen &screen, const LevelImpl &level_impl)
     screen << level_impl._map;
     if (mvinch(level_impl._downstair.GetY(), level_impl._downstair.GetX()) == '.' && level_impl._index != 0)
         mvaddch(level_impl._downstair.GetY(), level_impl._downstair.GetX(), '<');
-    if (mvinch(level_impl._upstair.GetY(), level_impl._upstair.GetX()) == '.' && level_impl._index != level_impl._total_level-1)
+    if (mvinch(level_impl._upstair.GetY(), level_impl._upstair.GetX()) == '.' && level_impl._index != level_impl._total_level - 1)
     {
         mvaddch(level_impl._upstair.GetY(), level_impl._upstair.GetX(), '>');
     }
-    if (level_impl._index == level_impl._total_level-1 && mvinch(level_impl._win.GetY(), level_impl._win.GetX()) == '.')
+    if (level_impl._index == level_impl._total_level - 1 && mvinch(level_impl._win.GetY(), level_impl._win.GetX()) == '.')
     {
         mvaddch(level_impl._win.GetY(), level_impl._win.GetX(), 'Y');
     }
@@ -34,8 +34,11 @@ Screen &operator<<(Screen &screen, const LevelImpl &level_impl)
     }
     int defence = int(1.5 * level_impl._index);
     int num = int(level_impl._monstre_vector.size());
-    mvprintw(26, 2, "Level: %d(%d)", level_impl._index + 1,level_impl._total_level);
-    mvprintw(27, 2, "Monstre:  Hp: %d  Attack: %d  Defence %d Num:%d(%d)\n", int(2.5 * level_impl._index + 2), int(1.5 * level_impl._index) + 5, defence,num, level_impl._monstre_num);
+    if (level_impl._total_level != 1000)
+        mvprintw(26, 2, "Level: %d(%d)", level_impl._index + 1, level_impl._total_level);
+    else
+        mvprintw(26, 2, "Level: %d(endless)", level_impl._index + 1);
+    mvprintw(27, 2, "Monstre:  Hp: %d  Attack: %d  Defence %d Num:%d(%d)\n", int(2.5 * level_impl._index + 2), int(1.5 * level_impl._index) + 5, defence, num, level_impl._monstre_num);
     return screen;
 }
 

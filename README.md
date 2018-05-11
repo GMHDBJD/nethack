@@ -40,7 +40,7 @@ A nethack game using C++ for midterm project:
     - use Enter Key to use your prop or choose the game mode
   
 - rules
-    - There are 3 modes which have a different number of levels.The maps are all randomly generated.
+    - There are 4 modes which have a different number of levels.The maps are all randomly generated.
     - You will win the game if you get the yendor or lose the game when your HP down to 0.
     - You can hurt a monstre only if you predict the monstre's movement and lanch an attack.
     - Monstre can only move in four directions and only move in the room.
