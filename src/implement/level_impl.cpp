@@ -71,7 +71,7 @@ void LevelImpl::SetIndex(const int &index)
     _monstre_num = index * 2 + 5;
     for (int i = 0; i < _monstre_num; ++i)
     {
-        Monstre new_monster(int(3 * _index) + 2, int(2 * _index) + 5, int(2 * _index));
+        Monstre new_monster(int(3 * _index) + 2, int(2 * _index) + 5, int(3 * _index));
         new_monster.SetPosition(_map.GetRandomPosition());
         _monstre_vector.push_back(new_monster);
     }
