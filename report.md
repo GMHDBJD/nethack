@@ -19,6 +19,7 @@
         Level---Monstre;
         Level---Prop;
         Map---Room;
+        Map--调用---Corridor((Corridor));
         Room---Door;
         Corridor--连接---Room;
         Corridor--连接---Door;
