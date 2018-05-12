@@ -156,7 +156,7 @@ void LevelImpl::AttackMonstre(const Position &position, Player *player)
     {
         if (i->GetPosition() == position)
         {
-            if (i->GetHp() > player->GetAttack()-i->GetDefence())
+            if (i->GetHp() > (player->GetAttack()-i->GetDefence()))
             {
                 mvprintw(0, 0, "You attack the monstre.\n");
                 *i -= *player;
