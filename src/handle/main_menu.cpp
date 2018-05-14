@@ -34,12 +34,6 @@ void MainMenu()
                     quit = true;
                 else
                 {
-                    if (item_index(current_item(menu)) == 3)
-                    {
-                        clear();
-                        mvprintw(0, 0, "Please wait a moment...");
-                        refresh();
-                    }
                     Game game(item_index(current_item(menu)));
                     game.MainGame();
                 }

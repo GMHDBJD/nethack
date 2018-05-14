@@ -38,6 +38,12 @@ Position Level::GetRandomPosition() const
     return level_impl->GetRandomPosition();
 }
 
+
+Position Level::GetAnotherPosition() const
+{
+    return level_impl->GetAnotherPosition();
+}
+
 void Level::SetIndex(const int &index)
 {
     return level_impl->SetIndex(index);
@@ -62,6 +68,7 @@ Position Level::GetWinPosition() const
 {
     return level_impl->GetWinPosition();
 }
+
 Position Level::GetDownstairPosition() const
 {
     return level_impl->GetDownstairPosition();

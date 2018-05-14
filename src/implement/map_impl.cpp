@@ -84,6 +84,14 @@ Position MapImpl::GetRandomPosition() const
     return _rooms[index].GetPosition().AddXY(rand() % (_rooms[index].GetWidth() - 3) + 1, rand() % (_rooms[index].GetHeight() - 3) + 1);
 }
 
+Position MapImpl::GetAnotherPosition() const
+{
+    int index = rand() % 5;
+    while (index == _first_room)
+        index = rand() % 5;
+    return _rooms[index].GetPosition().AddXY(rand() % (_rooms[index].GetWidth() - 3) + 1, rand() % (_rooms[index].GetHeight() - 3) + 1);
+}
+
 Screen &operator<<(Screen &screen, const MapImpl &map_impl)
 {
     for (int i = 0; i < Position::_k_max_height; ++i)

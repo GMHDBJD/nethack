@@ -20,6 +20,7 @@ public:
 
   void SaveRoom(const Room &room);
   Position GetRoomInitPosition() const;
+  Position GetAnotherPosition() const;
   Position GetRandomPosition() const;
   void Corridor(const Position &, const Position &);
 };

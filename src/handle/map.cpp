@@ -16,6 +16,11 @@ Position Map::GetRoomInitPosition() const
     return map_impl->GetRoomInitPosition();
 }
 
+Position Map::GetAnotherPosition() const
+{
+    return map_impl->GetAnotherPosition();
+}
+
 Position Map::GetRandomPosition() const
 {
     return map_impl->GetRandomPosition();

@@ -46,12 +46,12 @@ LevelImpl::LevelImpl()
 {
     _downstair = GetInitPosition();
     _player_position = _downstair;
-    _upstair = GetRandomPosition();
+    _upstair = GetAnotherPosition();
     while (_upstair == _downstair)
     {
         _upstair = GetRandomPosition();
     }
-    _win = GetRandomPosition();
+    _win = GetAnotherPosition();
     while (_win == _upstair || _win == _downstair)
     {
         _win = GetRandomPosition();
@@ -80,6 +80,11 @@ void LevelImpl::SetIndex(const int &index)
 Position LevelImpl::GetInitPosition() const
 {
     return _map.GetRoomInitPosition();
+}
+
+Position LevelImpl::GetAnotherPosition() const
+{
+    return _map.GetAnotherPosition();
 }
 
 Position LevelImpl::GetRandomPosition() const

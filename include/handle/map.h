@@ -18,11 +18,11 @@ public:
   Map &operator=(const Map &);
   void SaveRoom(const Room &room);
   void Update(const Position &);
-
   ~Map();
   friend Screen &operator<<(Screen &, const Map &);
   Position GetRoomInitPosition() const;
   Position GetRandomPosition() const;
+  Position GetAnotherPosition() const;
   void Corridor();
 };
 

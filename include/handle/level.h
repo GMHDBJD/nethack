@@ -18,6 +18,7 @@ public:
   void SetTotalLevel(const int &);
   Position GetInitPosition() const;
   Position GetRandomPosition() const;
+    Position GetAnotherPosition() const;
   void SetIndex(const int &);
   Map GetMap() const;
   bool UpdateMap(const Position &position);

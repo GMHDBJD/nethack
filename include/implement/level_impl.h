@@ -14,6 +14,7 @@ public:
   friend Screen &operator<<(Screen &, const LevelImpl &);
   Position GetInitPosition() const;
   Position GetRandomPosition() const;
+  Position GetAnotherPosition() const;
   Map GetMap() const;
   bool UpdateMap(const Position &position);
   void SetIndex(const int &index);
