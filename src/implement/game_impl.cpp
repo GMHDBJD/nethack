@@ -77,7 +77,7 @@ bool GameImpl::SwitchChoice(const char &input)
     }
     else if (strchr("uj", input))
     {
-        if (input == 'u' && _player.GetPosition() == _level_vecotr[_current_level].GetUpstairPosition())
+        if (input == 'u' && _player.GetPosition() == _level_vecotr[_current_level].GetUpstairPosition()&&_current_level!=_total_level)
         {
             if (_current_level == _top_level)
             {
@@ -90,7 +90,7 @@ bool GameImpl::SwitchChoice(const char &input)
             ++_current_level;
             clear();
         }
-        else if (input == 'j' && _player.GetPosition() == _level_vecotr[_current_level].GetDownstairPosition())
+        else if (input == 'j' && _player.GetPosition() == _level_vecotr[_current_level].GetDownstairPosition()&&_current_level!=0)
         {
             --_current_level;
             clear();
